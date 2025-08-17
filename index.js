@@ -31,6 +31,12 @@ connectDB();
 
 app.use("/api", User);
 app.use("/api", Product);
+app.get('/',(req, res)=>{
+   res.send({
+      activeStatus:true,
+      error:false,
+   })
+})
 // Start server
 app.listen(PORT, () => {
   console.log("Server is running on port", PORT);
